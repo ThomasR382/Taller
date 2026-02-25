@@ -33,13 +33,28 @@ public class metodos {
                     for (int k = 0; k < m2.length; k++) {
                         if (m1[i][j].getID() == m2[j2][k].getID()) {
                             mt[i][j].setStock(m1[i][j].getStock() + m2[j2][k].getStock());
+                            m2[j2][k].setStock(0);
 
                         }
+                        mt[i][j].setID(m1[i][j].getID());
+                        mt[i][j].setNombre(m1[i][j].getNombre());
+                        mt[i][j].setPrecio(m1[i][j].getPrecio());
 
                     }
                 }
             }
         }
         return mt;
+    }
+
+    public void Mostrarmatriz (objproducto[][] mt) {
+        for (int i = 0; i < mt.length; i++) {
+            for (int j = 0; j < mt.length; j++) {
+                System.out.println("ID: " + mt[i][j].getID());
+                System.out.println("Nombre: " + mt[i][j].getNombre());
+                System.out.println("Precio: " + mt[i][j].getPrecio());
+                System.out.println("Stock: " + mt[i][j].getStock());
+            }
+        }
     }
 }
